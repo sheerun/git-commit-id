@@ -1,0 +1,26 @@
+{
+  "name": "git-commit-id",
+  "version": "0.0.0",
+  "dependencies": {
+    "modern-node": "2.2.0"
+  },
+  "author": "Adam Stankiewicz <sheerun@sher.pl>",
+  "repository": "sheerun/git-commit-id",
+  "license": "MIT",
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "modern test",
+    "format": "modern format",
+    "lint": "modern lint",
+    "precommit": "modern precommit"
+  },
+  "lint-staged": {
+    "*.js": [
+      "modern lint",
+      "git add"
+    ]
+  }
+}
