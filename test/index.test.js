@@ -1,14 +1,21 @@
 const execSync = require('child_process').execSync
 const gitCommitId = require('../')
+const fs = require('fs-extra')
+const os = require('os')
+const path = require('path')
 
-const cwd = '/tmp/g'
+const tmp = os.tmpdir()
+const cwd = path.join(tmp, 'g')
 
 beforeEach(() => {
-  execSync(`rm -rf ${cwd} && mkdir ${cwd}`, { stdio: ['pipe', 'ignore'] })
+  fs.removeSync(cwd)
+  fs.mkdirpSync(cwd)
 })
 
-function git(commands, options = {}) {
-  return execSync('git ' + commands, { cwd: options.cwd || cwd }).toString().trim()
+function git (commands, options = {}) {
+  return execSync('git ' + commands, { cwd: options.cwd || cwd })
+    .toString()
+    .trim()
 }
 
 it('return undefined if not in git repository', () => {
@@ -17,7 +24,9 @@ it('return undefined if not in git repository', () => {
 
 it('returns emptry tree id for fresh repository', () => {
   git('init')
-  expect(gitCommitId({ cwd })).toEqual('4b825dc642cb6eb9a060e54bf8d69288fbee4904')
+  expect(gitCommitId({ cwd })).toEqual(
+    '4b825dc642cb6eb9a060e54bf8d69288fbee4904'
+  )
 })
 
 it('gets git commit id for commit', () => {

@@ -22,5 +22,8 @@
       "modern lint",
       "git add"
     ]
+  },
+  "devDependencies": {
+    "fs-extra": "^8.1.0"
   }
 }
