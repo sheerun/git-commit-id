@@ -22,9 +22,13 @@ function gitCommitId (options = {}) {
     return
   }
 
-  const ref = head.match('refs/heads/.*')[0]
+  const ref = head.match('refs/heads/.*')
 
-  return readFileSync(path.join(cwd, '.git', ref)) || "4b825dc642cb6eb9a060e54bf8d69288fbee4904"
+  if (ref) {
+    return readFileSync(path.join(cwd, '.git', ref[0])) || "4b825dc642cb6eb9a060e54bf8d69288fbee4904"
+  }
+
+  return head
 }
 
 module.exports = gitCommitId

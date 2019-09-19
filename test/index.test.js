@@ -4,7 +4,7 @@ const gitCommitId = require('../')
 const cwd = '/tmp/g'
 
 beforeEach(() => {
-  execSync(`rm -rf ${cwd} && mkdir ${cwd}`)
+  execSync(`rm -rf ${cwd} && mkdir ${cwd}`, { stdio: ['pipe', 'ignore'] })
 })
 
 function git(commands, options = {}) {
@@ -29,4 +29,12 @@ it('gets git commit id for commit', () => {
 it('gets git commit id for this repo', () => {
   const commitId = git('rev-parse HEAD', { cwd: process.cwd() })
   expect(gitCommitId()).toEqual(commitId)
+})
+
+it('gets git commit id for detached head', () => {
+  git('init')
+  git('commit --allow-empty -m test')
+  git('commit --allow-empty -m test2')
+  git('checkout HEAD^')
+  expect(gitCommitId({ cwd })).toEqual(git('rev-parse HEAD'))
 })
