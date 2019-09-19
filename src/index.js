@@ -1,17 +1,30 @@
 const fs = require('fs')
 const path = require('path')
 
+function readFileSync(filepath) {
+  try {
+    return fs.readFileSync(filepath, 'utf-8').trim()
+  } catch (e) {
+    if (e.code == 'ENOENT') {
+      return
+    }
+
+    throw e
+  }
+}
+
 function gitCommitId (options = {}) {
   const cwd = options.cwd || process.cwd()
 
-  if (!fs.existsSync(path.join(cwd, '.git'))) {
+  const head = readFileSync(path.join(cwd, '.git', 'HEAD'))
+
+  if (!head) {
     return
   }
 
-  const head = fs.readFileSync(path.join(cwd, '.git', 'HEAD'), 'utf-8')
   const ref = head.match('refs/heads/.*')[0]
 
-  return fs.readFileSync(path.join(cwd, '.git', ref), 'utf-8').trim()
+  return readFileSync(path.join(cwd, '.git', ref)) || "4b825dc642cb6eb9a060e54bf8d69288fbee4904"
 }
 
 module.exports = gitCommitId
