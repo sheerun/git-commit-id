@@ -1,7 +1,4 @@
-# git-commit-id
-
-[![Build Status](https://travis-ci.org/sheerun/git-commit-id.svg?branch=master)](https://travis-ci.org/sheerun/git-commit-id)
-[![Modern Node](https://img.shields.io/badge/modern-node-9BB48F.svg)](https://github.com/sheerun/modern-node)
+# git-commit-id [![Build Status](https://travis-ci.org/sheerun/git-commit-id.svg?branch=master)](https://travis-ci.org/sheerun/git-commit-id) [![Modern Node](https://img.shields.io/badge/modern-node-9BB48F.svg)](https://github.com/sheerun/modern-node)
 
 > Short package description
 
