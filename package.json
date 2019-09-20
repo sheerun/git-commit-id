@@ -2,7 +2,7 @@
   "name": "git-commit-id",
   "version": "0.0.0",
   "dependencies": {
-    "modern-node": "2.2.0"
+    "modern-node": "2.3.0"
   },
   "author": "Adam Stankiewicz <sheerun@sher.pl>",
   "repository": "sheerun/git-commit-id",

@@ -3049,10 +3049,10 @@ mkdirp@^0.5.0, mkdirp@^0.5.1:
   dependencies:
     minimist "0.0.8"
 
-modern-node@2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/modern-node/-/modern-node-2.2.0.tgz#9788c0fca9c9b0d9974c9f97ad192f8c733bf237"
-  integrity sha512-BvruUMqBBeCYa2jhrweIGd+pu5ZYK4wti8N97Zrsurhn9jaGbGw7Ahz9ecpukvWnA4gTYL9Wqd3i20T9H22zXw==
+modern-node@2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/modern-node/-/modern-node-2.3.0.tgz#8610c574dadbcf19ed7172f2f0c97a1900254542"
+  integrity sha512-L1YF1iNOcZp5DUNFEadbcblgjAxLYh2F1jqZ0i0spmf/V7xmqR6B9kiMUocFGsJI4vOI2faamHrUcN9JONZgXQ==
   dependencies:
     camelcase "^5.3.1"
     chalk "^2.4.2"
