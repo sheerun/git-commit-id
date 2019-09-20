@@ -31,6 +31,8 @@ it('returns emptry tree id for fresh repository', () => {
 
 it('gets git commit id for commit', () => {
   git('init')
+  git('config user.name "Your Name"')
+  git('config user.email "you@example.com"')
   git('commit --allow-empty -m test --author="User <user@example.com>"')
   expect(gitCommitId({ cwd })).toEqual(git('rev-parse HEAD'))
 })
@@ -42,6 +44,8 @@ it('gets git commit id for this repo', () => {
 
 it('gets git commit id for detached head', () => {
   git('init')
+  git('config user.name "Your Name"')
+  git('config user.email "you@example.com"')
   git('commit --allow-empty -m test --author="User <user@example.com>"')
   git('commit --allow-empty -m test2 --author="User <user@example.com>"')
   git('checkout HEAD^')
