@@ -9,10 +9,10 @@ Useful e.g. for CI, release for [Sentry](https://github.com/getsentry/sentry-web
 ## Installation
 
 ```
-yarn add git-commit-id
+yarn add --dev git-commit-id
 ```
 
-> If you're using [npm](https://www.npmjs.com/) you can use: `npm install git-commit-id`.
+> If you're using [npm](https://www.npmjs.com/) you can use: `npm install --save-dev git-commit-id`.
 
 ## Usage
 
