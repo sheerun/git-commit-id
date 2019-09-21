@@ -22,10 +22,12 @@ const gitCommitId = require('git-commit-id')
 const commitId = gitCommitId()
 ```
 
-You can also pass `cwd` option to specify git directory:
+### Custom directory
+
+You can pass `cwd` option to specify custom git directory:
 
 
-```
+```js
 const commitId = gitCommitId({ cwd: __dirname })
 ```
 
