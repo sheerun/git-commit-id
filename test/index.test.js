@@ -19,7 +19,9 @@ function git (commands, options = {}) {
 }
 
 it('return undefined if not in git repository', () => {
-  expect(gitCommitId({ cwd: '/tmp' })).toEqual(undefined)
+  expect(() => {
+    gitCommitId({ cwd: '/tmp' })
+  }).toThrowError()
 })
 
 it('returns emptry tree id for fresh repository', () => {

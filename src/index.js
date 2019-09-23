@@ -19,7 +19,7 @@ function gitCommitId (options = {}) {
   const head = readFileSync(path.join(cwd, '.git', 'HEAD'))
 
   if (!head) {
-    return
+    throw new Error('Git repository not found in ' + cwd)
   }
 
   const ref = head.match('refs/heads/.*')
