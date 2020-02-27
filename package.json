@@ -2,9 +2,7 @@
   "name": "git-commit-id",
   "description": "Returns commit id (commit sha) of git repository",
   "version": "1.0.1",
-  "dependencies": {
-    "modern-node": "2.3.0"
-  },
+  "dependencies": {},
   "author": "Adam Stankiewicz <sheerun@sher.pl>",
   "repository": "sheerun/git-commit-id",
   "license": "MIT",
@@ -31,6 +29,7 @@
     ]
   },
   "devDependencies": {
-    "fs-extra": "^8.1.0"
+    "fs-extra": "^8.1.0",
+    "modern-node": "2.3.0"
   }
 }
